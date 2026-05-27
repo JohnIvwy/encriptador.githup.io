@@ -2,46 +2,45 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
     <link rel="icon" href="imagenes/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <img class="logo" src="imagenes/Logo.png">
+        <img class="logo" src="imagenes/Logo.png" alt="Logotipo Encriptador">
     </header>
     <main>
         <section class="sec-entrada">
-            <textarea class="mensaje" type="text" name="mensaje" cols="40" rows="6" placeholder="Ingrese el texto aquí"></textarea>
+            <label class="sr-only" for="mensaje">Texto a encriptar</label>
+            <textarea id="mensaje" class="mensaje" name="mensaje" placeholder="Ingrese el texto aquí"></textarea>
             <div class="advertencia">
-                <img class="simbolo" src="imagenes/Simbolo.png">
+                <img class="simbolo" src="imagenes/Simbolo.png" alt="Símbolo de advertencia">
                 <h6>Solo letras minúsculas y sin acentos</h6>
             </div>
             <div class="botones">
-                <button class="btn-encriptar" type="button" onclick="btnEncriptar()">Encriptar</button>
-                <button class="btn-desencriptar" type="button" onclick="btnDesencriptar()">Desencriptar</button>
+                <button id="btn-encriptar" class="btn btn--primary btn-encriptar" type="button">Encriptar</button>
+                <button id="btn-desencriptar" class="btn btn--secondary btn-desencriptar" type="button">Desencriptar</button>
             </div>
         </section>
         <section class="sec-salida">
             <div class="card1">
-                <img class="muñeco" src="imagenes/Muñeco.png">
+                <img class="muñeco" src="imagenes/Muñeco.png" alt="Ilustración" />
                 <h2 class="msg1">Ningún mensaje fue encontrado</h2>
                 <p class="msg2">Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
             <div class="card2">
-                <textarea class="salida" type="text" name="salida" cols="18" rows="8" disabled></textarea>
-                <button class="btn-copiar" type="button" onclick="btnCopiar()">Copiar</button>
+                <label class="sr-only" for="salida">Salida</label>
+                <textarea id="salida" class="salida" name="salida" disabled></textarea>
+                <button id="btn-copiar" class="btn btn--secondary btn-copiar" type="button">Copiar</button>
             </div>
         </section>
     </main>
     <footer>
-
     </footer>
+    <div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
 </body>
 
 <script src="js/encriptar.js"></script>
